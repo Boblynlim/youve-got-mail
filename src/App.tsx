@@ -145,7 +145,7 @@ export default function App() {
             width: "calc(100% - 6rem)",
             maxWidth: "340px",
             transform: "translateX(-50%)",
-            fontSize: "24px",
+            fontSize: "20px",
           }}
         >
           <p style={{ marginBottom: "6rem", textAlign: "left" }}>
@@ -321,7 +321,7 @@ export default function App() {
           top: "64px",
           width: "calc(100% - 6rem)",
           maxWidth: "340px",
-          fontSize: "24px",
+          fontSize: "20px",
         }} // width: calc(100% - 4rem) = full width minus px-8 margins
         initial={{ opacity: 0, x: "-50%" }}
         animate={{ opacity: frame >= 2 ? 1 : 0, x: "-50%" }}
