@@ -159,9 +159,10 @@ export default function App() {
             left: "50%",
             top: "20%",
             width: "calc(100% - 6rem)",
-            maxWidth: "100%",
+            maxWidth: "340px",
             transform: "translateX(-50%)",
             fontSize: "24px",
+            textAlign: "center",
           }}
         >
           <p style={{ marginBottom: "6rem" }}>
