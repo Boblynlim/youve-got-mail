@@ -12,7 +12,7 @@ export default function BackButton({ onClick }: BackButtonProps) {
         color: "white",
         top: "2rem",
         left: "2rem",
-        fontSize: "1.5rem",
+        fontSize: "1rem",
         fontFamily: "Times Newer Roman:Regular, sans-serif",
         background: "none",
         border: "none",
