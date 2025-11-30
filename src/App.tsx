@@ -138,7 +138,7 @@ export default function App() {
 
         {/* Code input content - styled like page 1 text */}
         <div
-          className="absolute flex flex-col font-['Times_Newer_Roman:Regular',sans-serif] leading-[24px] not-italic text-white tracking-[-1px] z-20 px-8"
+          className="absolute flex flex-col font-['Times_Newer_Roman:Regular',sans-serif] leading-[20px] not-italic text-white tracking-[-1px] z-20 px-8"
           style={{
             left: "50%",
             top: "20%",
@@ -315,7 +315,7 @@ export default function App() {
 
       {/* Frame 1: Animated text - fades in */}
       <motion.div
-        className="absolute flex flex-col font-['Times_Newer_Roman:Regular',sans-serif] leading-[24px] not-italic text-white tracking-[-1px] z-20 px-8"
+        className="absolute flex flex-col font-['Times_Newer_Roman:Regular',sans-serif] leading-[20px] not-italic text-white tracking-[-1px] z-20 px-8"
         style={{
           left: "50%",
           top: "64px",
