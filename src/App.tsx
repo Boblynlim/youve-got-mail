@@ -146,10 +146,9 @@ export default function App() {
             maxWidth: "340px",
             transform: "translateX(-50%)",
             fontSize: "24px",
-            textAlign: "center",
           }}
         >
-          <p style={{ marginBottom: "6rem" }}>
+          <p style={{ marginBottom: "6rem", textAlign: "left" }}>
             input the last 6 digits of your phone number to open your letter:
           </p>
 
