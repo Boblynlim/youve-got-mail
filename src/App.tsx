@@ -5,6 +5,7 @@ import imgEnvelope from "./assets/envelope.png";
 import imgOpenEnvelope from "./assets/open_envelope.png";
 import imgNote from "./assets/note.png";
 import { supabase } from "./supabaseClient";
+import BackButton from "./components/BackButton";
 
 export default function App() {
   const [frame, setFrame] = useState(1);
@@ -133,24 +134,7 @@ export default function App() {
           />
         </div>
 
-        {/* Back button */}
-        <button
-          onClick={() => setPage("animation")}
-          style={{
-            position: "absolute",
-            zIndex: 30,
-            color: "white",
-            top: "2rem",
-            left: "2rem",
-            fontSize: "1.5rem",
-            fontFamily: "Times Newer Roman:Regular, sans-serif",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          ← Back
-        </button>
+        <BackButton onClick={() => setPage("animation")} />
 
         {/* Code input content - styled like page 1 text */}
         <div
@@ -262,24 +246,7 @@ export default function App() {
           />
         </div>
 
-        {/* Back button */}
-        <button
-          onClick={() => setPage("code-input")}
-          style={{
-            position: "absolute",
-            zIndex: 30,
-            color: "white",
-            top: "2rem",
-            left: "2rem",
-            fontSize: "18px",
-            fontFamily: "Times Newer Roman:Regular, sans-serif",
-            background: "none",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          ← Back
-        </button>
+        <BackButton onClick={() => setPage("code-input")} />
 
         {/* Note image - centered and responsive */}
         <div
