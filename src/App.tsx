@@ -14,6 +14,35 @@ export default function App() {
   const [letterContent, setLetterContent] = useState("");
   const [error, setError] = useState("");
 
+  // Helper function to render text with different font sizes for Chinese characters
+  const renderMixedText = (text: string) => {
+    // Regex to match Chinese characters along with adjacent punctuation and emojis
+    // Only matches sequences that contain at least one Chinese character
+    const chineseRegex =
+      /([\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff][\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff\s\.,;:!?()'""\-–—…、。，！？；：""''（）【】《》\u1f300-\u1f9ff\u2600-\u26ff\u2700-\u27bf]*)/g;
+    const parts = text.split(chineseRegex);
+
+    return parts.map((part, index) => {
+      // Check if this part contains Chinese characters
+      if (part && /[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]/.test(part)) {
+        return (
+          <span
+            key={index}
+            style={{
+              fontSize: "20px",
+              fontFamily: "'Noto Sans SC', sans-serif",
+              fontWeight: 400,
+              letterSpacing: "0px",
+            }}
+          >
+            {part}
+          </span>
+        );
+      }
+      return part;
+    });
+  };
+
   useEffect(() => {
     // Frame 1 to Frame 2 after 400ms delay
     const timer1 = setTimeout(() => {
@@ -295,7 +324,9 @@ export default function App() {
               whiteSpace: "pre-wrap",
             }}
           >
-            {letterContent || "Your message will appear here"}
+            {letterContent
+              ? renderMixedText(letterContent)
+              : "Your message will appear here"}
           </p>
         </div>
       </div>
