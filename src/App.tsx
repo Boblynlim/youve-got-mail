@@ -315,10 +315,10 @@ export default function App() {
           <p
             className="text-center"
             style={{
-              fontSize: "clamp(1.5rem, calc(8rem - 5.5vw), 4.5rem)",
+              fontSize: "clamp(4rem, calc(8rem - 5.5vw), 6.75rem)",
               fontFamily: "'Jazs Handwriting', sans-serif",
-              lineHeight: ".5",
-              letterSpacing: "-0.05em",
+              lineHeight: ".4",
+              letterSpacing: "-0.06em",
               color: "#484B7F",
               padding: "8px",
               whiteSpace: "pre-wrap",
