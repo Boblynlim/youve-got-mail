@@ -4,7 +4,8 @@ import imgBackground from "./assets/background.png";
 import imgEnvelope from "./assets/envelope.png";
 import imgOpenEnvelope from "./assets/open_envelope.png";
 import imgNote from "./assets/note.png";
-import { supabase } from "./supabaseClient";
+import { convex } from "./convexClient";
+import { api } from "../convex/_generated/api";
 import BackButton from "./components/BackButton";
 
 export default function App() {
@@ -135,14 +136,12 @@ export default function App() {
       const enteredCode = code.join("");
 
       if (enteredCode.length === 6) {
-        // Check if code exists in Supabase database
-        const { data, error: dbError } = await supabase
-          .from("letters")
-          .select("message")
-          .eq("code", enteredCode)
-          .single();
+        // Look up the letter in Convex by access code
+        const data = await convex.query(api.letters.getByCode, {
+          code: enteredCode,
+        });
 
-        if (dbError || !data) {
+        if (!data) {
           setError("Invalid code. Please try again.");
         } else {
           setLetterContent(data.message);
